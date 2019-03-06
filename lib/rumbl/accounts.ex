@@ -35,6 +35,12 @@ defmodule Rumbl.Accounts do
       |> Repo.insert
   end
 
+  def register_user(attrs \\ %{}) do
+    %User{}
+    |> User.registration_changeset(attrs)
+    |> Repo.insert
+  end
+
   @doc """
   Returns the list of credentials.
 
